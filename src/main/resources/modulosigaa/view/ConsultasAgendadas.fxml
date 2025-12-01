@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="452.0" prefWidth="823.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.ConsultasAgendadasController">
+   <children>
+      <ImageView fitHeight="452.0" fitWidth="171.0" layoutX="652.0" pickOnBounds="true">
+         <image>
+            <Image url="@../imagens/white-0gq7jrfqvn.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="452.0" fitWidth="171.0" layoutX="-7.0" pickOnBounds="true">
+         <image>
+            <Image url="@../imagens/white-0gq7jrfqvn.png" />
+         </image>
+      </ImageView>
+      
+      <AnchorPane layoutX="105.0" prefHeight="452.0" prefWidth="613.0" style="-fx-background-color: #999999;">
+         <children>
+            <AnchorPane layoutX="4.0" layoutY="-1.0" prefHeight="452.0" prefWidth="603.0" style="-fx-background-color: #ffffff;">
+               <children>
+                  <AnchorPane prefHeight="25.0" prefWidth="605.0" style="-fx-background-color: #3f5ad8;">
+                     <children>
+                        <Text fill="WHITE" layoutX="26.0" layoutY="17.0" strokeType="OUTSIDE" strokeWidth="0.0" text="UERN - SIGAA -  Sistema Integrado de Gestão de Atividades Acadêmicas" wrappingWidth="583.6015625">
+                           <font>
+                              <Font name="Verdana" size="15.0" />
+                           </font>
+                        </Text>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane layoutY="25.0" prefHeight="32.0" prefWidth="200.0" style="-fx-background-color: #efebde;" />
+                  
+                        <MenuBar layoutX="12.0" layoutY="25.0" prefHeight="32.0" prefWidth="593.0" style="-fx-background-color: #efebde;">
+                     <menus>
+                        <Menu mnemonicParsing="false" text="Alunos">
+                           <items>
+                              <MenuItem mnemonicParsing="false" onAction="#handleVisualizarGradeCurricular" text="Visualizar grade curricular" />
+                              <MenuItem mnemonicParsing="false" onAction="#handleDisciplinasEspeciais" text="Disciplinas especiais" />
+                              <MenuItem mnemonicParsing="false" onAction="#handleListarPendenciasCriticas" text="Listar alunos com pendências críticas" />
+                              <MenuItem mnemonicParsing="false" onAction="#handleVisualizarConsultasAgendadas" text="Visualizar consultas agendadas" />
+                           </items>
+                        </Menu>
+                     </menus>
+                  </MenuBar>
+                  
+                  <AnchorPane layoutY="114.0" prefHeight="19.0" prefWidth="605.0" style="-fx-background-color: #b3bef1;">
+                     <children>
+                        <Text layoutX="85.0" layoutY="16.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Agendamento Finalizado:" wrappingWidth="258.6015625">
+                           <font>
+                              <Font name="Verdana" size="15.0" />
+                           </font></Text>
+                        <Text layoutX="303.0" layoutY="16.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Agendamento Pendentes:" wrappingWidth="194.6015625">
+                           <font>
+                              <Font name="Verdana" size="15.0" />
+                           </font></Text>
+                        <ImageView fitHeight="17.0" fitWidth="27.0" layoutX="279.0" layoutY="2.0" pickOnBounds="true" preserveRatio="true">
+                            <image><Image url="@../imagens/25404.png" /></image>
+                        </ImageView>
+                        <ImageView fitHeight="21.0" fitWidth="23.0" layoutX="480.0" layoutY="1.0" pickOnBounds="true" preserveRatio="true">
+                            <image><Image url="@../imagens/74f0609f9316051f07af9de18f1b977c-traco-colorido-do-alarme-do-relogio-analogico.png" /></image>
+                        </ImageView>
+                     </children>
+                  </AnchorPane>
+                  
+                  <Text layoutX="212.0" layoutY="91.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Consultas Agendadas" textAlignment="CENTER" wrappingWidth="170.6015625">
+                     <font>
+                        <Font name="Verdana" size="15.0" />
+                     </font></Text>
+                  
+                  <AnchorPane layoutY="152.0" prefHeight="14.0" prefWidth="605.0" style="-fx-background-color: #b5b5b5;">
+                     <children>
+                        <Text layoutX="303.0" layoutY="12.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Data da reunião" wrappingWidth="170.6015625">
+                           <font>
+                              <Font name="Verdana" size="15.0" />
+                           </font></Text>
+                        <Text layoutX="147.0" layoutY="12.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Aluno" wrappingWidth="69.6015625">
+                           <font>
+                              <Font name="Verdana" size="15.0" />
+                           </font></Text>
+                     </children>
+                  </AnchorPane>
+                  
+                  <ScrollPane fitToWidth="true" layoutX="60.0" layoutY="180.0" prefHeight="200.0" prefWidth="480.0" style="-fx-border-color: #b3bef1; -fx-border-width: 1;">
+                     <content>
+                        <VBox fx:id="agendamentosVBox" prefWidth="460.0" spacing="10.0" /> 
+                     </content>
+                  </ScrollPane>
+                  
+                  <Button layoutX="286.0" layoutY="417.0" mnemonicParsing="false" onAction="#handleVoltar" style="-fx-background-color: #b3bef1;" text="🠔" />
+                  <ImageView fitHeight="32.0" fitWidth="40.0" layoutY="25.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../imagens/8e55e256-ad85-4311-99fe-3737a238c254%20(1).png" />
+                     </image>
+                  </ImageView>
+                  
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+   </children>
+</Pane>

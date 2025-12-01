@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+
+<AnchorPane fx:controller="com.example.SucessoController" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="289.0" prefWidth="416.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Text layoutX="68.0" layoutY="68.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Análise concluída com sucesso!" textAlignment="CENTER" wrappingWidth="280.96630859375">
+         <font>
+            <Font name="Verdana" size="30.0" />
+         </font>
+      </Text>
+      <Button onAction="#handleVoltarParaInicio" layoutX="121.0" layoutY="167.0" mnemonicParsing="false" style="-fx-background-color: #3f5ad8;" text="Voltar para a tela inicial" textFill="WHITE" />
+   </children>
+</AnchorPane>

@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<Pane prefHeight="447.0" prefWidth="829.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.DisciplinasEspeciaisController">
+   <children>
+      <ImageView fitHeight="447.0" fitWidth="121.0" layoutX="-6.0" pickOnBounds="true">
+         <image>
+            <Image url="@../imagens/white-0gq7jrfqvn.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="447.0" fitWidth="121.0" layoutX="708.0" layoutY="4.0" pickOnBounds="true">
+         <image>
+            <Image url="@../imagens/white-0gq7jrfqvn.png" />
+         </image>
+      </ImageView>
+      
+      <AnchorPane layoutX="106.0" layoutY="-3.0" prefHeight="453.0" prefWidth="618.0" style="-fx-background-color: #8F8F8F;">
+         <children>
+            <AnchorPane layoutX="5.0" prefHeight="453.0" prefWidth="609.0" style="-fx-background-color: #FFFFFF;">
+               <children>
+                  
+                  <AnchorPane prefHeight="74.0" prefWidth="609.0" style="-fx-background-color: #b3bef1;">
+                     <children>
+                        <AnchorPane prefHeight="25.0" prefWidth="600.0" style="-fx-background-color: #ffde59;">
+                           <children>
+                              <AnchorPane layoutY="-2.0" prefHeight="25.0" prefWidth="609.0" style="-fx-background-color: #3f5ad8;">
+                                 <children>
+                                    <Text fill="WHITE" layoutX="29.0" layoutY="21.0" strokeType="OUTSIDE" strokeWidth="0.0" text="UERN - SIGAA -  Sistema Integrado de Gestão de Atividades Acadêmicas" wrappingWidth="579.6015625">
+                                       <font>
+                                          <Font name="Verdana" size="15.0" />
+                                       </font>
+                                    </Text>
+                                 </children>
+                              </AnchorPane>
+                           </children>
+                        </AnchorPane>
+                        <Text layoutX="14.0" layoutY="43.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Bartira Paraguaçu Falcão Dantas Rocha" wrappingWidth="380.6015625">
+                           <font>
+                              <Font name="Verdana" size="15.0" />
+                           </font></Text>
+                        <Text layoutX="14.0" layoutY="60.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Diretoria do Campos Avançado de Natal (11.05.01)" wrappingWidth="408.6015625">
+                           <font>
+                              <Font name="Verdana" size="12.0" />
+                           </font></Text>
+                        <Text layoutX="337.0" layoutY="61.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Semestre atual: 2025.2" wrappingWidth="208.6015625">
+                           <font>
+                              <Font name="Verdana" size="12.0" />
+                           </font></Text>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane layoutY="70.0" prefHeight="32.0" prefWidth="77.0" style="-fx-background-color: #efebde;" />
+                  
+                  <MenuBar layoutX="17.0" layoutY="70.0" prefHeight="32.0" prefWidth="592.0" style="-fx-background-color: #efebde;">
+                     <menus>
+                        <Menu mnemonicParsing="false" text="Alunos">
+                           <items>
+                              <MenuItem mnemonicParsing="false" onAction="#handleVisualizarGradeCurricular" text="Visualizar grade curricular" />
+                              <MenuItem mnemonicParsing="false" text="Disciplinas especiais" />
+                              <MenuItem mnemonicParsing="false" onAction="#handleListarPendenciasCriticas" text="Listar alunos com pendências críticas" />
+                              <MenuItem mnemonicParsing="false" onAction="#handleVisualizarConsultasAgendadas" text="Visualizar consultas agendadas" />
+                           </items>
+                        </Menu>
+                     </menus>
+                  </MenuBar>
+                  
+                  <AnchorPane layoutY="122.0" prefHeight="14.0" prefWidth="609.0" style="-fx-background-color: #b3bef1;">
+                     <children>
+                        <Text layoutX="211.0" layoutY="12.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Lista de Disciplinas Especiais" wrappingWidth="218.6015625" />
+                     </children>
+                  </AnchorPane>
+                  
+                  <ScrollPane fitToWidth="true" layoutX="40.0" layoutY="144.0" prefHeight="265.0" prefWidth="528.0" style="-fx-background-color: #b3bef1; -fx-background-radius: 5;">
+                     <content>
+                        <VBox fx:id="disciplinasVBox" prefWidth="500.0" spacing="10.0" /> 
+                     </content>
+                  </ScrollPane>
+                  
+                  <Button layoutX="289.0" layoutY="416.0" mnemonicParsing="false" onAction="#handleVoltar" style="-fx-background-color: #b3bef1;" text="🠔" />
+                  <ImageView fitHeight="32.0" fitWidth="40.0" layoutY="71.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../imagens/8e55e256-ad85-4311-99fe-3737a238c254%20(1).png" />
+                     </image>
+                  </ImageView>
+                  
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+   </children>
+</Pane>

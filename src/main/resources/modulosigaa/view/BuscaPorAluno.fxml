@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="452.0" prefWidth="776.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.BuscaPorAlunoController">
+   <children>
+      <ImageView fitHeight="452.0" fitWidth="115.0" layoutX="661.0" pickOnBounds="true">
+         <image>
+            <Image url="@../imagens/white-0gq7jrfqvn.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="452.0" fitWidth="115.0" pickOnBounds="true">
+         <image>
+            <Image url="@../imagens/white-0gq7jrfqvn.png" />
+         </image>
+      </ImageView>
+      
+      <AnchorPane layoutX="82.0" prefHeight="452.0" prefWidth="613.0" style="-fx-background-color: #999999;">
+         <children>
+            <AnchorPane layoutX="4.0" prefHeight="452.0" prefWidth="603.0" style="-fx-background-color: #ffffff;">
+               <children>
+                  <AnchorPane prefHeight="74.0" prefWidth="605.0" style="-fx-background-color: #b3bef1;">
+                     <children>
+                        <AnchorPane prefHeight="25.0" prefWidth="600.0" style="-fx-background-color: #ffde59;">
+                           <children>
+                              <AnchorPane layoutY="-2.0" prefHeight="25.0" prefWidth="605.0" style="-fx-background-color: #3f5ad8;">
+                                 <children>
+                                    <Text fill="WHITE" layoutX="27.0" layoutY="18.0" strokeType="OUTSIDE" strokeWidth="0.0" text="UERN - SIGAA -  Sistema Integrado de Gestão de Atividades Acadêmicas" wrappingWidth="571.6015625">
+                                       <font>
+                                          <Font name="Verdana" size="15.0" />
+                                       </font>
+                                    </Text>
+                                 </children>
+                              </AnchorPane>
+                           </children>
+                        </AnchorPane>
+                        <Text layoutX="14.0" layoutY="43.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Bartira Paraguaçu Falcão Dantas Rocha" wrappingWidth="380.6015625">
+                           <font>
+                              <Font name="Verdana" size="15.0" />
+                           </font>
+                        </Text>
+                        <Text layoutX="14.0" layoutY="56.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Diretoria do Campos Avançado de Natal (11.05.01)" wrappingWidth="314.6015625">
+                           <font>
+                              <Font name="Verdana" size="12.0" />
+                           </font>
+                        </Text>
+                        <Text layoutX="331.0" layoutY="56.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Semestre atual: 2025.2" wrappingWidth="208.6015625">
+                           <font>
+                              <Font name="Verdana" size="12.0" />
+                           </font>
+                        </Text>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane layoutY="68.0" prefHeight="32.0" prefWidth="200.0" style="-fx-background-color: #efebde;" />
+                  
+                  <MenuBar layoutX="12.0" layoutY="68.0" prefHeight="32.0" prefWidth="593.0" style="-fx-background-color: #efebde;">
+                     <menus>
+                        <Menu mnemonicParsing="false" text="Alunos">
+                           <items>
+                              <MenuItem mnemonicParsing="false" onAction="#handleVisualizarGradeCurricular" text="Visualizar grade curricular do aluno" />
+                              <MenuItem mnemonicParsing="false" onAction="#handleDisciplinasEspeciais" text="Disciplinas especiais" />
+                              <MenuItem mnemonicParsing="false" onAction="#handleListarPendenciasCriticas" text="Listar alunos com pendências críticas" />
+                              <MenuItem mnemonicParsing="false" onAction="#handleDisciplinasEspeciais" text="Disciplinas especiais" />
+                           </items>
+                        </Menu>
+                     </menus>
+                  </MenuBar>
+                  
+                  <Text layoutX="231.0" layoutY="118.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Busca por Alunos Críticos" wrappingWidth="179.6015625">
+                     <font>
+                        <Font name="Verdana Bold" size="10.0" />
+                     </font>
+                  </Text>
+                  
+                  <ScrollPane fitToWidth="true" layoutX="106.0" layoutY="161.0" prefHeight="202.0" prefWidth="411.0" style="-fx-background-color: #b3bef1; -fx-background-radius: 5;">
+                     <content>
+                        <VBox fx:id="alunoListVBox" prefWidth="388.0" spacing="5.0" /> 
+                     </content>
+                  </ScrollPane>
+                  
+                  <AnchorPane layoutY="370.0" prefHeight="41.0" prefWidth="605.0" style="-fx-background-color: #b3bef1;">
+                     <children>
+                        
+                        <TextArea fx:id="nomeInput" layoutX="174.0" layoutY="4.0" prefHeight="25.0" prefWidth="115.0" promptText="Nome" />
+                        
+                        <TextArea fx:id="matriculaInput" layoutX="315.0" layoutY="4.0" prefHeight="25.0" prefWidth="115.0" promptText="Matrícula" />
+                        
+                        <Button layoutX="447.0" layoutY="5.0" mnemonicParsing="false" onAction="#handlePesquisarAluno" style="-fx-background-color: #ffffff;" text="Pesquisar" />
+                     </children>
+                  </AnchorPane>
+                  
+                  <Button layoutX="287.0" layoutY="410.0" mnemonicParsing="false" onAction="#handleVoltar" style="-fx-background-color: #b3bef1;" text="🠔" />
+                  <ImageView fitHeight="32.0" fitWidth="40.0" layoutY="68.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../imagens/8e55e256-ad85-4311-99fe-3737a238c254%20(1).png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+   </children>
+</Pane>
