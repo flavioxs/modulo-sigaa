@@ -1,30 +1,59 @@
 package modulosigaa;
 
-import java.sql.Connection;
-import java.sql.SQLException;
+import javafx.application.Application;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.stage.Stage;
 import modulosigaa.db.DBConnection;
 
-public class Main {
-    public static void main(String[] args) {
-        System.out.println("Iniciando tentativa de conexão...");
+import java.sql.Connection;
 
-        try (Connection conn = DBConnection.getConnection()) {
+public class Main extends Application {
+
+    @Override
+    public void start(Stage primaryStage) {
+        // 1. Teste de Conexão com o Banco (Opcional, mas recomendado na inicialização)
+        verificarBancoDeDados();
+
+        try {
+            // 2. Carregamento do FXML
+            // O caminho deve iniciar com '/' e refletir a estrutura em resources
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/modulosigaa/view/TelaInicial.fxml"));
+            Parent root = loader.load();
+
+            // 3. Configuração da Cena e Palco
+            Scene scene = new Scene(root);
+            primaryStage.setTitle("UERN - SIGAA - Módulo Orientador Acadêmico");
+            primaryStage.setScene(scene);
             
-            if (conn != null) {
-                System.out.println("✅ CONEXÃO REALIZADA COM SUCESSO!");
-                System.out.println("Status da conexão: " + (conn.isValid(2) ? "Aberta e Válida" : "Inválida"));
-            } else {
-                System.out.println("⚠️ Conexão retornou nulo (algo estranho aconteceu).");
-            }
+            // Impede que a janela fique muito pequena
+            primaryStage.setMinWidth(800);
+            primaryStage.setMinHeight(600);
+            
+            primaryStage.show();
+            System.out.println("Aplicação iniciada com sucesso!");
 
-        } catch (RuntimeException e) {
-            System.out.println("❌ FALHA NA CONEXÃO.");
-            System.out.println("Erro: " + e.getMessage());
-            if (e.getCause() != null) {
-                System.out.println("Detalhe técnico: " + e.getCause().getMessage());
-            }
-        } catch (SQLException e) {
-            System.out.println("Erro ao verificar status da conexão: " + e.getMessage());
+        } catch (Exception e) {
+            e.printStackTrace();
+            System.err.println("Erro fatal ao iniciar a aplicação: " + e.getMessage());
         }
+    }
+
+    private void verificarBancoDeDados() {
+        System.out.println("Tentando conectar ao banco de dados...");
+        try (Connection conn = DBConnection.getConnection()) {
+            if (conn != null && !conn.isClosed()) {
+                System.out.println("Conexão com o banco estabelecida com sucesso.");
+            } else {
+                System.out.println("Conexão obtida, mas parece fechada ou nula.");
+            }
+        } catch (Exception e) {
+            System.err.println("Falha ao conectar ao banco de dados. Verifique se o MySQL está rodando.");
+        }
+    }
+
+    public static void main(String[] args) {
+        launch(args);
     }
 }

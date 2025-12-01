@@ -1,91 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import java.lang.*?>
+<?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
 <?import javafx.scene.text.*?>
-<?import javafx.scene.control.Hyperlink?>
-<?import javafx.scene.control.Menu?>
-<?import javafx.scene.control.MenuBar?>
-<?import javafx.scene.control.MenuItem?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.Pane?>
-<?import javafx.scene.text.Font?>
-<?import javafx.scene.text.Text?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="375.0" prefWidth="820.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.MainController">
-   <children>
-      <ImageView fitHeight="377.0" fitWidth="108.0" layoutX="712.0" layoutY="-1.0" pickOnBounds="true">
+<AnchorPane fx:id="rootPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="500.0" minWidth="900.0" prefHeight="650.0" prefWidth="1100.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="modulosigaa.controller.TelaInicialController">   <children>
+      <ImageView fitHeight="650.0" fitWidth="108.0" pickOnBounds="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
          <image>
-            <Image url="@../imagens/white-0gq7jrfqvn.png" />
+            <Image url="@imgs/white-0gq7jrfqvn.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="377.0" fitWidth="108.0" layoutY="-1.0" pickOnBounds="true">
+
+      <ImageView fitHeight="650.0" fitWidth="108.0" pickOnBounds="true" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <image>
-            <Image url="@../imagens/white-0gq7jrfqvn.png" />
+            <Image url="@imgs/white-0gq7jrfqvn.png" />
          </image>
       </ImageView>
-      <AnchorPane layoutX="105.0" layoutY="-1.0" prefHeight="377.0" prefWidth="619.0" style="-fx-background-color: #999999;">
+
+      <AnchorPane style="-fx-background-color: #999999;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="105.0" AnchorPane.rightAnchor="105.0" AnchorPane.topAnchor="0.0">
          <children>
-            <AnchorPane layoutX="5.0" prefHeight="377.0" prefWidth="609.0" style="-fx-background-color: #FFFFFF;">
+            
+            <AnchorPane style="-fx-background-color: #FFFFFF;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="0.0">
                <children>
-                  <AnchorPane layoutX="388.0" layoutY="94.0" prefHeight="278.0" prefWidth="209.0" style="-fx-background-color: #ced6ff; -fx-background-radius: 3;">
+                  
+                  <AnchorPane prefHeight="95.0" style="-fx-background-color: #b3bef1;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                      <children>
-                        <AnchorPane layoutX="6.0" layoutY="14.0" prefHeight="103.0" prefWidth="198.0" style="-fx-background-color: #ffff; -fx-background-radius: 5;">
+                        <AnchorPane prefHeight="25.0" style="-fx-background-color: #ffde59;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
                            <children>
-                              <ImageView fitHeight="86.0" fitWidth="75.0" layoutX="121.0" layoutY="9.0" pickOnBounds="true" preserveRatio="true">
-                                 <image>
-                                    <Image url="@../imagens/c85ceb44-4289-4970-a1f8-4ea0f0b4e1b7.jpg" />
-                                 </image>
-                              </ImageView>
-                              <Hyperlink layoutX="60.0" layoutY="3.0" prefHeight="25.0" prefWidth="69.0" text="Mensagens">
-                                 <font>
-                                    <Font name="Verdana" size="10.0" />
-                                 </font></Hyperlink>
-                              <Hyperlink layoutX="10.0" layoutY="32.0" prefHeight="25.0" prefWidth="133.0" text="Atualizar foto e perfil">
-                                 <font>
-                                    <Font name="Verdana" size="10.0" />
-                                 </font>
-                              </Hyperlink>
-                              <Hyperlink layoutX="11.0" layoutY="64.0" prefHeight="25.0" prefWidth="133.0" text="Meus dados pessoais">
-                                 <font>
-                                    <Font name="Verdana" size="10.0" />
-                                 </font>
-                              </Hyperlink>
-                           </children>
-                        </AnchorPane>
-                        <AnchorPane layoutX="6.0" layoutY="123.0" prefHeight="127.0" prefWidth="198.0" style="-fx-background-color: #ffff; -fx-background-radius: 5;">
-                           <children>
-                              <Text fill="#797979" layoutY="20.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Dados Institucionais" textAlignment="CENTER" wrappingWidth="201.0">
-                                 <font>
-                                    <Font size="15.0" />
-                                 </font>
-                              </Text>
-                              <Text layoutX="2.0" layoutY="39.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Curso: CIENCIA DA COMPUTAÇÃO/ CAN-DCAN - NATAL - MT" wrappingWidth="198.0">
-                                 <font>
-                                    <Font name="Verdana" size="15.0" />
-                                 </font></Text>
-                              <Text layoutX="2.0" layoutY="94.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Status: Ativo" wrappingWidth="198.0">
-                                 <font>
-                                    <Font name="Verdana" size="15.0" />
-                                 </font></Text>
-                              <Text layoutX="2.0" layoutY="112.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Entrada: 2024.1" wrappingWidth="198.0">
-                                 <font>
-                                    <Font name="Verdana" size="15.0" />
-                                 </font></Text>
-                           </children></AnchorPane>
-                     </children>
-                  </AnchorPane>
-                  <AnchorPane layoutY="1.0" prefHeight="74.0" prefWidth="609.0" style="-fx-background-color: #b3bef1;">
-                     <children>
-                        <AnchorPane prefHeight="25.0" prefWidth="600.0" style="-fx-background-color: #ffde59;">
-                           <children>
-                              <AnchorPane layoutY="-2.0" prefHeight="25.0" prefWidth="609.0" style="-fx-background-color: #3f5ad8;">
+                              <AnchorPane layoutY="-2.0" prefHeight="25.0" style="-fx-background-color: #3f5ad8;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
                                  <children>
-                                    <Text fill="WHITE" layoutX="28.0" layoutY="17.0" strokeType="OUTSIDE" strokeWidth="0.0" text="UERN - SIGAA -  Sistema Integrado de Gestão de Atividades Acadêmicas" wrappingWidth="571.6015625">
+                                    <Text fill="WHITE" layoutX="28.0" layoutY="17.0" strokeType="OUTSIDE" strokeWidth="0.0" text="UERN - SIGAA - Sistema Integrado de Gestão de Atividades Acadêmicas">
                                        <font>
                                           <Font name="Verdana" size="15.0" />
                                        </font>
@@ -94,46 +42,138 @@
                               </AnchorPane>
                            </children>
                         </AnchorPane>
-                        <Text layoutX="14.0" layoutY="43.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Bartira Paraguaçu Falcão Dantas Rocha" wrappingWidth="380.6015625">
+                        
+                        <Text layoutX="14.0" layoutY="50.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Bartira Paraguaçu Falcão Dantas Rocha">
                            <font>
                               <Font name="Verdana" size="15.0" />
                            </font>
                         </Text>
-                        <Text layoutX="14.0" layoutY="61.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Diretoria do Campos Avançado de Natal (11.05.01)" wrappingWidth="380.6015625">
+                        <Text layoutX="14.0" layoutY="70.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Diretoria do Campos Avançado de Natal (11.05.01)">
                            <font>
                               <Font name="Verdana" size="12.0" />
                            </font>
                         </Text>
-                        <Text layoutX="326.0" layoutY="60.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Semestre atual: 2025.2" wrappingWidth="208.6015625">
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Semestre atual: 2025.2" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="55.0">
                            <font>
                               <Font name="Verdana" size="12.0" />
                            </font>
                         </Text>
-                        <AnchorPane layoutY="68.0" prefHeight="32.0" prefWidth="183.0" style="-fx-background-color: #efebde;" />
                      </children>
                   </AnchorPane>
-                  <MenuBar layoutX="15.0" layoutY="69.0" prefHeight="32.0" prefWidth="594.0" style="-fx-background-color: #efebde;">
+
+                  <MenuBar layoutY="95.0" style="-fx-background-color: #efebde;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
                     <menus>
                       <Menu mnemonicParsing="false" text="Aluno">
-                        <items><MenuItem mnemonicParsing="false" onAction="#handleVisualizarGradeCurricular" text="Visualizar grade curricular" />
-                    <MenuItem mnemonicParsing="false" onAction="#handleDisciplinasEspeciais" text="Disciplinas especiais" />
-                    <MenuItem mnemonicParsing="false" onAction="#handleListarPendenciasCriticas" text="Listar alunos com pendências críticas" />
-                    <MenuItem mnemonicParsing="false" onAction="#handleVisualizarConsultasAgendadas" text="Visualizar consultas agendadas" />
+                        <items>
+                            <MenuItem mnemonicParsing="false" onAction="#handleVisualizarGradeCurricular" text="Visualizar grade curricular" />
+                            <MenuItem mnemonicParsing="false" onAction="#handleDisciplinasEspeciais" text="Disciplinas especiais" />
+                            <MenuItem mnemonicParsing="false" onAction="#handleListarPendenciasCriticas" text="Listar alunos com pendências críticas" />
+                            <MenuItem mnemonicParsing="false" onAction="#handleVisualizarConsultasAgendadas" text="Visualizar consultas agendadas" />
                         </items>
                       </Menu>
                     </menus>
                   </MenuBar>
-                  <AnchorPane layoutX="14.0" layoutY="151.0" prefHeight="40.0" prefWidth="357.0" style="-fx-background-color: #ced6ff; -fx-background-radius: 5;" />
-                  <AnchorPane layoutX="13.0" layoutY="232.0" prefHeight="40.0" prefWidth="357.0" style="-fx-background-color: #ced6ff; -fx-background-radius: 5;" />
-                  <AnchorPane layoutX="13.0" layoutY="316.0" prefHeight="40.0" prefWidth="357.0" style="-fx-background-color: #ced6ff; -fx-background-radius: 5;" />
-                  <ImageView fitHeight="32.0" fitWidth="40.0" layoutX="-3.0" layoutY="69.0" pickOnBounds="true" preserveRatio="true">
+                  
+                  <ImageView fitHeight="25.0" fitWidth="30.0" layoutX="10.0" layoutY="98.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../imagens/8e55e256-ad85-4311-99fe-3737a238c254%20(1).png" />
+                        <Image url="@imgs/8e55e256-ad85-4311-99fe-3737a238c254%20(1).png" />
                      </image>
                   </ImageView>
+
+                  <VBox spacing="20.0" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="245.0" AnchorPane.topAnchor="140.0">
+                     <children>
+                        <Pane style="-fx-background-color: #ced6ff; -fx-background-radius: 5;" VBox.vgrow="ALWAYS" />
+                        <Pane style="-fx-background-color: #ced6ff; -fx-background-radius: 5;" VBox.vgrow="ALWAYS" />
+                        <Pane style="-fx-background-color: #ced6ff; -fx-background-radius: 5;" VBox.vgrow="ALWAYS" />
+                     </children>
+                  </VBox>
+
+                  <VBox spacing="15.0" AnchorPane.bottomAnchor="20.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="140.0" prefWidth="215.0">
+                     <children>
+                        
+                        <AnchorPane prefHeight="160.0" style="-fx-background-color: #ced6ff; -fx-background-radius: 3; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.2), 5, 0, 0, 0);">
+                           <children>
+                              <AnchorPane layoutX="6.0" layoutY="14.0" prefHeight="103.0" prefWidth="203.0" style="-fx-background-color: #ffff; -fx-background-radius: 5;" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="6.0" AnchorPane.rightAnchor="6.0" AnchorPane.topAnchor="14.0">
+                                 <children>
+                                    
+                                    <VBox alignment="TOP_CENTER" spacing="10.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="15.0">
+                                       <children>
+                                          <ImageView fitHeight="80.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@imgs/foto_perfil.jpg" />
+                                             </image>
+                                             <clip>
+                                                <Rectangle width="80" height="80" arcWidth="15" arcHeight="15" />
+                                             </clip>
+                                          </ImageView>
+
+                                          <VBox alignment="TOP_CENTER" spacing="2.0">
+                                             <children>
+                                                <Hyperlink text="Mensagens">
+                                                   <font>
+                                                      <Font name="Verdana" size="10.0" />
+                                                   </font>
+                                                </Hyperlink>
+                                                <Hyperlink text="Atualizar foto e perfil">
+                                                   <font>
+                                                      <Font name="Verdana" size="10.0" />
+                                                   </font>
+                                                </Hyperlink>
+                                                <Hyperlink text="Meus dados pessoais">
+                                                   <font>
+                                                      <Font name="Verdana" size="10.0" />
+                                                   </font>
+                                                </Hyperlink>
+                                             </children>
+                                          </VBox>
+                                       </children>
+                                    </VBox>
+                                    
+                                 </children>
+                              </AnchorPane>
+                           </children>
+                        </AnchorPane>
+
+                        <AnchorPane style="-fx-background-color: #ced6ff; -fx-background-radius: 3;" VBox.vgrow="ALWAYS">
+                           <children>
+                              <AnchorPane style="-fx-background-color: #ffff; -fx-background-radius: 5;" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="25.0">
+                                 <children>
+                                    <VBox spacing="10.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
+                                       <children>
+                                          <Text fill="#797979" strokeType="OUTSIDE" strokeWidth="0.0" text="Dados Institucionais" textAlignment="CENTER" wrappingWidth="180.0">
+                                             <font>
+                                                <Font size="14.0" />
+                                             </font>
+                                          </Text>
+                                          <Separator />
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Curso: CIENCIA DA COMPUTAÇÃO/ CAN-DCAN - NATAL - MT" wrappingWidth="180.0">
+                                             <font>
+                                                <Font name="Verdana" size="13.0" />
+                                             </font>
+                                          </Text>
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Status: Ativo">
+                                             <font>
+                                                <Font name="Verdana" size="13.0" />
+                                             </font>
+                                          </Text>
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Entrada: 2024.1">
+                                             <font>
+                                                <Font name="Verdana" size="13.0" />
+                                             </font>
+                                          </Text>
+                                       </children>
+                                    </VBox>
+                                 </children>
+                              </AnchorPane>
+                           </children>
+                        </AnchorPane>
+
+                     </children>
+                  </VBox>
+
                </children>
             </AnchorPane>
          </children>
       </AnchorPane>
    </children>
-</Pane>
+</AnchorPane>
