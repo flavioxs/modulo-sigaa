@@ -12,14 +12,9 @@ import java.io.IOException;
 
 public class Navegacao {
 
-    /**
-     * Usa um Evento (clique de botão) para encontrar a janela e trocar a tela.
-     * Ideal para botões comuns (Button).
-     */
     public static void navegar(ActionEvent event, String fxmlPath, String titulo) {
         Object source = event.getSource();
         if (source instanceof Node) {
-            // Pega a janela (Stage) a partir do botão clicado
             Stage stage = (Stage) ((Node) source).getScene().getWindow();
             carregarTela(stage, fxmlPath, titulo);
         } else {
@@ -27,10 +22,6 @@ public class Navegacao {
         }
     }
 
-    /**
-     * Usa um Componente Visual (Node) qualquer para encontrar a janela.
-     * Obrigatório para navegar a partir de MENUS (MenuBar), pois MenuItem não é um Node.
-     */
     public static void navegar(Node nodeReferencia, String fxmlPath, String titulo) {
         if (nodeReferencia != null && nodeReferencia.getScene() != null) {
             Stage stage = (Stage) nodeReferencia.getScene().getWindow();
@@ -50,7 +41,7 @@ public class Navegacao {
             Scene scene = new Scene(root);
             stage.setScene(scene);
             stage.setTitle("UERN - SIGAA - " + titulo);
-            stage.centerOnScreen(); // Centraliza a janela
+            stage.centerOnScreen(); 
             stage.show();
 
         } catch (IOException e) {

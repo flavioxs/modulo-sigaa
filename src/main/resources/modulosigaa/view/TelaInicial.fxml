@@ -8,7 +8,9 @@
 <?import javafx.scene.shape.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane fx:id="rootPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="500.0" minWidth="900.0" prefHeight="650.0" prefWidth="1100.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="modulosigaa.controller.TelaInicialController">   <children>
+<AnchorPane fx:id="rootPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="500.0" minWidth="900.0" prefHeight="650.0" prefWidth="1100.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="modulosigaa.controller.TelaInicialController">
+   <children>
+   
       <ImageView fitHeight="650.0" fitWidth="108.0" pickOnBounds="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
          <image>
             <Image url="@imgs/white-0gq7jrfqvn.png" />
@@ -50,7 +52,7 @@
                         </Text>
                         <Text layoutX="14.0" layoutY="70.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Diretoria do Campos Avançado de Natal (11.05.01)">
                            <font>
-                              <Font name="Verdana" size="12.0" />
+                               <Font name="Verdana" size="12.0" />
                            </font>
                         </Text>
                         <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Semestre atual: 2025.2" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="55.0">
@@ -61,9 +63,16 @@
                      </children>
                   </AnchorPane>
 
-                  <MenuBar layoutY="95.0" style="-fx-background-color: #efebde;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+                  <MenuBar layoutY="95.0" prefHeight="35.0" style="-fx-background-color: #efebde; -fx-padding: 0 0 0 10;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
                     <menus>
                       <Menu mnemonicParsing="false" text="Aluno">
+                        <graphic>
+                           <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                              <image>
+                                 <Image url="@imgs/icone_aluno.png" />
+                              </image>
+                           </ImageView>
+                        </graphic>
                         <items>
                             <MenuItem mnemonicParsing="false" onAction="#handleVisualizarGradeCurricular" text="Visualizar grade curricular" />
                             <MenuItem mnemonicParsing="false" onAction="#handleDisciplinasEspeciais" text="Disciplinas especiais" />
@@ -74,12 +83,6 @@
                     </menus>
                   </MenuBar>
                   
-                  <ImageView fitHeight="25.0" fitWidth="30.0" layoutX="10.0" layoutY="98.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@imgs/8e55e256-ad85-4311-99fe-3737a238c254%20(1).png" />
-                     </image>
-                  </ImageView>
-
                   <VBox spacing="20.0" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="245.0" AnchorPane.topAnchor="140.0">
                      <children>
                         <Pane style="-fx-background-color: #ced6ff; -fx-background-radius: 5;" VBox.vgrow="ALWAYS" />
@@ -95,7 +98,6 @@
                            <children>
                               <AnchorPane layoutX="6.0" layoutY="14.0" prefHeight="103.0" prefWidth="203.0" style="-fx-background-color: #ffff; -fx-background-radius: 5;" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="6.0" AnchorPane.rightAnchor="6.0" AnchorPane.topAnchor="14.0">
                                  <children>
-                                    
                                     <VBox alignment="TOP_CENTER" spacing="10.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="15.0">
                                        <children>
                                           <ImageView fitHeight="80.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true">
@@ -128,7 +130,6 @@
                                           </VBox>
                                        </children>
                                     </VBox>
-                                    
                                  </children>
                               </AnchorPane>
                            </children>
