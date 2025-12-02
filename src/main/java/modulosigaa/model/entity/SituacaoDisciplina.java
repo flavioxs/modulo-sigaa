@@ -1,11 +1,11 @@
 package modulosigaa.model.entity;
 
-import modulosigaa.model.enums.StatusRisco;
+import modulosigaa.model.enums.StatusSituacao; 
 
 public class SituacaoDisciplina {
     private int matriculaAluno;
     private int idDisciplina;
-    private StatusRisco statusDisciplina; 
+    private StatusSituacao statusDisciplina; 
     private double nota;
     
     private Disciplina disciplinaDetalhada; 
@@ -18,8 +18,8 @@ public class SituacaoDisciplina {
     public int getIdDisciplina() { return idDisciplina; }
     public void setIdDisciplina(int idDisciplina) { this.idDisciplina = idDisciplina; }
 
-    public StatusRisco getStatusDisciplina() { return statusDisciplina; }
-    public void setStatusDisciplina(StatusRisco statusDisciplina) { this.statusDisciplina = statusDisciplina; }
+    public StatusSituacao getStatusDisciplina() { return statusDisciplina; }
+    public void setStatusDisciplina(StatusSituacao statusDisciplina) { this.statusDisciplina = statusDisciplina; }
 
     public double getNota() { return nota; }
     public void setNota(double nota) { this.nota = nota; }

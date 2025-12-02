@@ -1,40 +1,28 @@
 package modulosigaa.service;
 
-import modulosigaa.dao.DisciplinaDAO;
+import modulosigaa.repository.DisciplinaRepository; // Importação correta
 import modulosigaa.model.entity.Disciplina;
 
 import java.util.List;
 
 public class DisciplinaService {
 
-    private final DisciplinaDAO disciplinaDAO;
+    private final DisciplinaRepository disciplinaRepository; // Nome da variável atualizado
 
     public DisciplinaService() {
-        this.disciplinaDAO = new DisciplinaDAO();
+        this.disciplinaRepository = new DisciplinaRepository(); // Instância correta
     }
 
-    /**
-     * Retorna a lista de disciplinas de uma grade curricular específica.
-     * Ideal para exibir as opções de matrícula ou solicitação especial.
-     */
     public List<Disciplina> listarDisciplinasPorGrade(int idGrade) {
-        // Regra de Negócio (exemplo): Poderíamos validar se o idGrade existe antes de chamar o DAO.
-        return disciplinaDAO.buscarPorGrade(idGrade);
+        return disciplinaRepository.buscarPorGrade(idGrade);
     }
 
-    /**
-     * Retorna todas as disciplinas da instituição.
-     * Útil para buscas gerais ou administrativas.
-     */
     public List<Disciplina> listarTodasDisciplinas() {
-        return disciplinaDAO.listarTodas();
+        return disciplinaRepository.listarTodas();
     }
 
-    /**
-     * Busca detalhes de uma disciplina.
-     */
     public Disciplina buscarDisciplinaPorId(int id) {
-        return disciplinaDAO.buscarPorId(id)
+        return disciplinaRepository.buscarPorId(id)
                 .orElseThrow(() -> new IllegalArgumentException("Disciplina não encontrada com ID: " + id));
     }
 }

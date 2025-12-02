@@ -1,4 +1,4 @@
-package modulosigaa.dao;
+package modulosigaa.repository; // Pacote corrigido
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -11,7 +11,7 @@ import java.util.Optional;
 import modulosigaa.db.DBConnection;
 import modulosigaa.model.entity.Disciplina;
 
-public class DisciplinaDAO {
+public class DisciplinaRepository { 
 
     public List<Disciplina> listarTodas() {
         List<Disciplina> disciplinas = new ArrayList<>();
