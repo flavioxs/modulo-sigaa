@@ -14,4 +14,8 @@ public class AlunoService {
     public List<Aluno> listarTodosAlunos() {
         return alunoRepository.buscarTodos();
     }
+
+    public List<Aluno> listarAlunosCriticos() {
+        return alunoRepository.buscarCriticos();
+    }
 }

@@ -14,9 +14,24 @@ import java.util.List;
 public class AlunoRepository {
 
     public List<Aluno> buscarTodos() {
-        String sql = "SELECT * FROM Aluno";
-        List<Aluno> lista = new ArrayList<>();
+        return buscarComFiltro(null);
+    }
 
+    public List<Aluno> buscarCriticos() {
+        String sql = "SELECT * FROM Aluno WHERE statusRisco IN ('Risco', 'Monitoramento')";
+        return executarQuery(sql);
+    }
+
+    private List<Aluno> buscarComFiltro(String condicaoExtra) {
+        String sql = "SELECT * FROM Aluno";
+        if (condicaoExtra != null && !condicaoExtra.isEmpty()) {
+            sql += " " + condicaoExtra;
+        }
+        return executarQuery(sql);
+    }
+
+    private List<Aluno> executarQuery(String sql) {
+        List<Aluno> lista = new ArrayList<>();
         try (Connection conn = DBConnection.getConnection();
              PreparedStatement stmt = conn.prepareStatement(sql);
              ResultSet rs = stmt.executeQuery()) {
@@ -27,14 +42,11 @@ public class AlunoRepository {
                 a.setNome(rs.getString("nomeAluno"));
                 a.setIra(rs.getDouble("IRA"));
                 a.setEmailInstitucional(rs.getString("A_emailInstitucional"));
-                // Converte a String do banco para o Enum
                 a.setStatusRisco(StatusRisco.fromString(rs.getString("statusRisco")));
                 a.setIdOrientador(rs.getInt("FK_idOrientador"));
                 a.setIdProfessor(rs.getInt("FK_idProfessor"));
-                
                 lista.add(a);
             }
-
         } catch (SQLException e) {
             e.printStackTrace();
             throw new RuntimeException("Erro ao listar alunos: " + e.getMessage());

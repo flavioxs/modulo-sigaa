@@ -1,116 +1,118 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.MenuBar?>
-<?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.control.ScrollPane?>
-<?import javafx.scene.control.TextArea?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="452.0" prefWidth="776.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="modulosigaa.controller.PendenciasCriticasController">   <children>
-      <ImageView fitHeight="458.0" fitWidth="108.0" layoutX="668.0" layoutY="-3.0" pickOnBounds="true">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="500.0" minWidth="900.0" prefHeight="650.0" prefWidth="1100.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="modulosigaa.controller.PendenciasCriticasController">
+   <children>
+   
+      <ImageView fitHeight="650.0" fitWidth="108.0" pickOnBounds="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
          <image>
-            <Image url="@../imagens/white-0gq7jrfqvn.png" />
+            <Image url="@imgs/white-0gq7jrfqvn.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="458.0" fitWidth="108.0" layoutX="-1.0" layoutY="-3.0" pickOnBounds="true">
+
+      <ImageView fitHeight="650.0" fitWidth="108.0" pickOnBounds="true" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <image>
-            <Image url="@../imagens/white-0gq7jrfqvn.png" />
+             <Image url="@imgs/white-0gq7jrfqvn.png" />
          </image>
       </ImageView>
       
-      <AnchorPane layoutX="82.0" layoutY="-3.0" prefHeight="458.0" prefWidth="613.0" style="-fx-background-color: #999999;">
+      <AnchorPane style="-fx-background-color: #999999;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="105.0" AnchorPane.rightAnchor="105.0" AnchorPane.topAnchor="0.0">
          <children>
-            <AnchorPane layoutX="4.0" prefHeight="458.0" prefWidth="605.0" style="-fx-background-color: #ffffff;">
+            
+            <AnchorPane style="-fx-background-color: #ffffff;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="0.0">
                <children>
-                  <AnchorPane prefHeight="74.0" prefWidth="605.0" style="-fx-background-color: #b3bef1;">
-                     <children>
-                        <Text layoutX="14.0" layoutY="43.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Bartira Paraguaçu Falcão Dantas Rocha" wrappingWidth="380.6015625">
-                           <font>
-                              <Font name="Verdana" size="15.0" />
-                           </font></Text>
-                        <Text layoutX="14.0" layoutY="60.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Diretoria do Campos Avançado de Natal (11.05.01)" wrappingWidth="314.6015625">
-                           <font>
-                              <Font name="Verdana" size="12.0" />
-                           </font></Text>
-                        <Text layoutX="331.0" layoutY="60.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Semestre atual: 2025.2" wrappingWidth="208.6015625">
-                           <font>
-                              <Font name="Verdana" size="12.0" />
-                           </font></Text>
-                     </children>
-                  </AnchorPane>
-                  <AnchorPane layoutY="68.0" prefHeight="32.0" prefWidth="200.0" style="-fx-background-color: #efebde;" />
                   
-                  <MenuBar layoutX="19.0" layoutY="68.0" prefHeight="32.0" prefWidth="586.0" style="-fx-background-color: #efebde;">
-                     <menus>
-                        <Menu mnemonicParsing="false" text="Alunos">
-                           <items>
-                              <MenuItem mnemonicParsing="false" onAction="#handleVisualizarGradeCurricular" text="Visualizar grade curricular" />
-                              <MenuItem mnemonicParsing="false" onAction="#handleDisciplinasEspeciais" text="Disciplinas especiais" />
-                              <MenuItem mnemonicParsing="false" text="Listar alunos com pendências críticas" /> <MenuItem mnemonicParsing="false" onAction="#handleVisualizarConsultasAgendadas" text="Visualizar consultas agendadas" />
-                           </items>
-                        </Menu>
-                     </menus>
-                  </MenuBar>
-                  
-                  <Text layoutX="228.0" layoutY="115.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Busca por Alunos Críticos" textAlignment="CENTER" wrappingWidth="179.6015625">
-                     <font>
-                        <Font name="Verdana" size="15.0" />
-                     </font></Text>
-                  <AnchorPane layoutY="141.0" prefHeight="14.0" prefWidth="605.0" style="-fx-background-color: #b3bef1;">
+                  <AnchorPane prefHeight="95.0" style="-fx-background-color: #b3bef1;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                      <children>
-                        <Text layoutX="264.0" layoutY="12.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Lista de alunos" wrappingWidth="168.6015625">
-                           <font>
-                              <Font name="Verdana" size="15.0" />
-                           </font></Text>
-                     </children>
-                  </AnchorPane>
-
-                  <ScrollPane fitToWidth="true" layoutX="106.0" layoutY="161.0" prefHeight="202.0" prefWidth="411.0" style="-fx-background-color: #b3bef1; -fx-background-radius: 5;">
-                     <content>
-                        <VBox fx:id="alunoListVBox" prefWidth="388.0" spacing="5.0" /> 
-                     </content>
-                  </ScrollPane>
-                  
-                  <AnchorPane layoutY="368.0" prefHeight="41.0" prefWidth="605.0" style="-fx-background-color: #b3bef1;">
-                     <children>
-                        <TextArea fx:id="nomeInput" layoutX="171.0" layoutY="5.0" prefHeight="21.0" prefWidth="115.0" promptText="Nome" />
+                        <AnchorPane prefHeight="25.0" style="-fx-background-color: #ffde59;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+                           <children>
+                               <AnchorPane layoutY="-2.0" prefHeight="25.0" style="-fx-background-color: #3f5ad8;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+                                 <children>
+                                    <Text fill="WHITE" layoutX="27.0" layoutY="18.0" strokeType="OUTSIDE" strokeWidth="0.0" text="UERN - SIGAA -  Sistema Integrado de Gestão de Atividades Acadêmicas">
+                                       <font>
+                                          <Font name="Verdana" size="15.0" />
+                                       </font>
+                                    </Text>
+                                 </children>
+                               </AnchorPane>
+                           </children>
+                        </AnchorPane>
                         
-                        <TextArea fx:id="matriculaInput" layoutX="324.0" layoutY="5.0" prefHeight="21.0" prefWidth="115.0" promptText="Matrícula" />
-                        
-                        <Button layoutX="465.0" layoutY="5.0" mnemonicParsing="false" onAction="#handlePesquisarAluno" style="-fx-background-color: #ffffff;" text="Pesquisar" />
-                     </children>
-                  </AnchorPane>
-                  
-                  <Button layoutX="287.0" layoutY="423.0" mnemonicParsing="false" onAction="#handleVoltar" prefHeight="25.0" prefWidth="50.0" style="-fx-background-color: #b3bef1;" text="🠔">
-                      <font>
-                          <Font size="14.0" /> 
-                      </font>
-                  </Button>
-                  <AnchorPane prefHeight="30.0" prefWidth="605.0" style="-fx-background-color: #3f5ad8;">
-                     <children>
-                        <Text fill="WHITE" layoutX="30.0" layoutY="18.0" strokeType="OUTSIDE" strokeWidth="0.0" text="UERN - SIGAA -  Sistema Integrado de Gestão de Atividades Acadêmicas" wrappingWidth="562.6015625">
+                        <Text layoutX="14.0" layoutY="50.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Bartira Paraguaçu Falcão Dantas Rocha">
                            <font>
                               <Font name="Verdana" size="15.0" />
+                           </font>
+                         </Text>
+                        <Text layoutX="14.0" layoutY="70.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Diretoria do Campos Avançado de Natal (11.05.01)">
+                           <font>
+                               <Font name="Verdana" size="12.0" />
+                           </font>
+                        </Text>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Semestre atual: 2025.2" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="55.0">
+                             <font>
+                              <Font name="Verdana" size="12.0" />
                            </font>
                         </Text>
                      </children>
                   </AnchorPane>
-                  <ImageView fitHeight="32.0" fitWidth="40.0" layoutY="68.0" pickOnBounds="true" preserveRatio="true">
+
+                  <MenuBar layoutY="95.0" prefHeight="35.0" style="-fx-background-color: #efebde;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+                  </MenuBar>
+                  
+                  <ImageView fitHeight="25.0" fitWidth="30.0" layoutX="10.0" layoutY="98.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../imagens/8e55e256-ad85-4311-99fe-3737a238c254%20(1).png" />
+                        <Image url="@imgs/8e55e256-ad85-4311-99fe-3737a238c254%20(1).png" />
                      </image>
                   </ImageView>
+                  
+                  <VBox alignment="TOP_CENTER" spacing="15.0" AnchorPane.bottomAnchor="60.0" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="50.0" AnchorPane.topAnchor="140.0">
+                     <children>
+                        <Label text="Alunos com Pendências Críticas" textFill="#000">
+                           <font>
+                              <Font name="Verdana Bold" size="14.0" />
+                           </font>
+                        </Label>
+                        
+                        <ScrollPane fitToWidth="true" style="-fx-background-color: transparent; -fx-background: #b3bef1; -fx-border-color: #b3bef1; -fx-border-radius: 5;" VBox.vgrow="ALWAYS">
+                           <content>
+                              <VBox fx:id="listaVBox" minHeight="200.0" spacing="10.0" style="-fx-background-color: #b3bef1; -fx-padding: 10;" /> 
+                           </content>
+                        </ScrollPane>
+                     </children>
+                  </VBox>
+                  
+                  <AnchorPane prefHeight="50.0" style="-fx-background-color: #b3bef1;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+                     <children>
+                        <HBox alignment="CENTER_LEFT" spacing="15.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <Button mnemonicParsing="false" onAction="#handleVoltar" style="-fx-background-color: #7986cb; -fx-text-fill: white; -fx-cursor: hand;" text="🠔 Voltar">
+                                 <font>
+                                    <Font name="Verdana Bold" size="12.0" />
+                                 </font>
+                              </Button>
+                           </children>
+                           <padding>
+                              <Insets left="20.0" right="20.0" />
+                           </padding>
+                        </HBox>
+                     </children>
+                  </AnchorPane>
+
                </children>
             </AnchorPane>
          </children>
       </AnchorPane>
    </children>
-</Pane>
+</AnchorPane>

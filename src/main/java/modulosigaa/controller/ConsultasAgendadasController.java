@@ -69,13 +69,13 @@ public class ConsultasAgendadasController {
         }
 
         if (!boxPendentes.getChildren().isEmpty()) {
-            Label lbl = new Label("📅 Pendentes de Aprovação");
+            Label lbl = new Label("Pendentes de Aprovação");
             lbl.setStyle("-fx-font-weight: bold; -fx-text-fill: #e65100;");
             agendamentosVBox.getChildren().addAll(lbl, boxPendentes);
         }
         
         if (!boxHistorico.getChildren().isEmpty()) {
-            Label lbl = new Label("🗂️ Histórico / Confirmados");
+            Label lbl = new Label("Histórico / Confirmados");
             lbl.setStyle("-fx-font-weight: bold; -fx-text-fill: #3f5ad8; -fx-padding: 10 0 0 0;");
             agendamentosVBox.getChildren().addAll(lbl, boxHistorico);
         }

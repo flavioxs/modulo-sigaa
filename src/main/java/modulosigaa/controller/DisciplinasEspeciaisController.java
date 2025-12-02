@@ -212,13 +212,13 @@ public class DisciplinasEspeciaisController {
         }
     }
 
-    private void mostrarAlerta(String titulo, String msg) {
+    /*private void mostrarAlerta(String titulo, String msg) {
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setTitle(titulo);
         alert.setHeaderText(null);
         alert.setContentText(msg);
         alert.showAndWait();
-    }
+    }*/
 
     @FXML
     public void handleVoltar(ActionEvent event) {
