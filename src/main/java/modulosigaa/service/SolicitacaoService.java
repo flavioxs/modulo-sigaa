@@ -3,7 +3,7 @@ package modulosigaa.service;
 import java.time.LocalDate;
 import java.util.List;
 
-import modulosigaa.dao.SolicitacaoDisciplinaDAO;
+import modulosigaa.repository.SolicitacaoDisciplinaRepository; // Importação Atualizada
 import modulosigaa.model.entity.Aluno;
 import modulosigaa.model.entity.Disciplina;
 import modulosigaa.model.entity.SolicitacaoDisciplina;
@@ -11,10 +11,10 @@ import modulosigaa.model.enums.StatusSolicitacao;
 
 public class SolicitacaoService {
 
-    private final SolicitacaoDisciplinaDAO dao;
+    private final SolicitacaoDisciplinaRepository repository; // Nome da variável atualizado
 
     public SolicitacaoService() {
-        this.dao = new SolicitacaoDisciplinaDAO();
+        this.repository = new SolicitacaoDisciplinaRepository(); // Instância correta
     }
 
     public void solicitarDisciplina(Aluno aluno, Disciplina disciplina, String justificativa) {
@@ -29,18 +29,18 @@ public class SolicitacaoService {
         solicitacao.setStatusSolicitacao(StatusSolicitacao.PENDENTE);
         solicitacao.setDataSolicitacao(LocalDate.now());
 
-        dao.criar(solicitacao);
+        repository.criar(solicitacao);
     }
 
     public List<SolicitacaoDisciplina> listarSolicitacoesPendentes() {
-        return dao.listarPendentes();
+        return repository.listarPendentes();
     }
 
     public void aprovarSolicitacao(SolicitacaoDisciplina solicitacao) {
-        dao.atualizarStatus(solicitacao.getIdSolicitacao(), StatusSolicitacao.ACEITA);
+        repository.atualizarStatus(solicitacao.getIdSolicitacao(), StatusSolicitacao.ACEITA);
     }
 
     public void recusarSolicitacao(SolicitacaoDisciplina solicitacao) {
-        dao.atualizarStatus(solicitacao.getIdSolicitacao(), StatusSolicitacao.RECUSADA);
+        repository.atualizarStatus(solicitacao.getIdSolicitacao(), StatusSolicitacao.RECUSADA);
     }
 }

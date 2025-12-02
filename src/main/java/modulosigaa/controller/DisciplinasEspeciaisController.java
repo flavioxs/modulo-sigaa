@@ -28,7 +28,7 @@ import java.util.stream.Collectors;
 
 public class DisciplinasEspeciaisController {
 
-    @FXML private VBox disciplinasVBox; // Container da lista no FXML
+    @FXML private VBox disciplinasVBox;
 
     private final SolicitacaoService solicitacaoService = new SolicitacaoService();
     private final ProfessorRepository professorRepository = new ProfessorRepository();
@@ -42,7 +42,6 @@ public class DisciplinasEspeciaisController {
         disciplinasVBox.getChildren().clear();
         disciplinasVBox.setSpacing(15);
 
-        // 1. Busca todas as pendências
         List<SolicitacaoDisciplina> todasPendencias = solicitacaoService.listarSolicitacoesPendentes();
 
         if (todasPendencias.isEmpty()) {
@@ -52,25 +51,21 @@ public class DisciplinasEspeciaisController {
             return;
         }
 
-        // 2. Agrupa por Nome da Disciplina (Java Streams)
-        // Cria um mapa onde a Chave é o Nome da Matéria e o Valor é a lista de alunos que pediram ela
         Map<String, List<SolicitacaoDisciplina>> agrupamento = todasPendencias.stream()
                 .collect(Collectors.groupingBy(SolicitacaoDisciplina::getNomeDisciplina));
 
-        // 3. Cria um card para cada Disciplina (Chave do mapa)
         for (String nomeDisciplina : agrupamento.keySet()) {
             List<SolicitacaoDisciplina> pedidosDaMateria = agrupamento.get(nomeDisciplina);
             disciplinasVBox.getChildren().add(criarCardDisciplina(nomeDisciplina, pedidosDaMateria));
         }
     }
 
-    // Cria o cartão visual da MATÉRIA
+
     private VBox criarCardDisciplina(String nomeDisciplina, List<SolicitacaoDisciplina> pedidos) {
         VBox card = new VBox(10);
         card.setPadding(new Insets(15));
         card.setStyle("-fx-background-color: white; -fx-background-radius: 8; -fx-border-color: #ddd; -fx-border-radius: 8; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 3, 0, 0, 1);");
 
-        // --- Cabeçalho ---
         HBox header = new HBox(10);
         header.setAlignment(Pos.CENTER_LEFT);
         
@@ -81,25 +76,23 @@ public class DisciplinasEspeciaisController {
         Pane spacer = new Pane();
         HBox.setHgrow(spacer, Priority.ALWAYS);
 
-        // Contador de solicitantes
+
         Label lblContador = new Label(pedidos.size() + " solicitantes");
         lblContador.setStyle("-fx-background-color: #fff3cd; -fx-text-fill: #856404; -fx-padding: 5 10; -fx-background-radius: 15; -fx-font-weight: bold;");
 
         header.getChildren().addAll(lblDisciplina, spacer, lblContador);
 
-        // --- Botões de Ação da Matéria ---
         HBox actions = new HBox(15);
         actions.setAlignment(Pos.CENTER_LEFT);
 
-        // Botão 1: Verificar Professores
-        Button btnProfessores = new Button("👨‍🏫 Verificar Professores");
+
+        Button btnProfessores = new Button("Verificar Professores");
         btnProfessores.setStyle("-fx-background-color: #e3f2fd; -fx-text-fill: #0d47a1; -fx-cursor: hand; -fx-border-color: #bbdefb;");
-        // Pega a área da primeira solicitação da lista (todas da mesma matéria tem a mesma área)
+     
         String area = pedidos.get(0).getAreaConhecimento();
         btnProfessores.setOnAction(e -> abrirJanelaProfessores(nomeDisciplina, area));
 
-        // Botão 2: Ver Justificativas (e Aceitar/Recusar)
-        Button btnJustificativas = new Button("📝 Ver Justificativas (" + pedidos.size() + ")");
+        Button btnJustificativas = new Button("Ver Justificativas (" + pedidos.size() + ")");
         btnJustificativas.setStyle("-fx-background-color: #3f5ad8; -fx-text-fill: white; -fx-cursor: hand; -fx-font-weight: bold;");
         btnJustificativas.setOnAction(e -> abrirJanelaJustificativas(nomeDisciplina, pedidos));
 
@@ -109,13 +102,12 @@ public class DisciplinasEspeciaisController {
         return card;
     }
 
-    // --- JANELA DE PROFESSORES ---
+
     private void abrirJanelaProfessores(String disciplina, String area) {
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setTitle("Disponibilidade Docente");
         alert.setHeaderText("Professores qualificados para: " + disciplina + "\nÁrea: " + area);
 
-        // Busca professores no banco
         List<Professor> professores = professorRepository.buscarPorArea(area);
 
         VBox content = new VBox(10);
@@ -147,13 +139,11 @@ public class DisciplinasEspeciaisController {
         alert.showAndWait();
     }
 
-    // --- JANELA DE JUSTIFICATIVAS (ONDE ACEITA/RECUSA) ---
     private void abrirJanelaJustificativas(String disciplina, List<SolicitacaoDisciplina> pedidos) {
         Alert alert = new Alert(Alert.AlertType.NONE); // Janela customizada
         alert.setTitle("Análise de Solicitações");
         alert.setHeaderText("Alunos solicitando: " + disciplina);
         
-        // Botão Fechar padrão
         alert.getButtonTypes().add(javafx.scene.control.ButtonType.CLOSE);
 
         VBox content = new VBox(10);
@@ -163,7 +153,6 @@ public class DisciplinasEspeciaisController {
             VBox alunoCard = new VBox(5);
             alunoCard.setStyle("-fx-border-color: #ccc; -fx-border-radius: 5; -fx-padding: 10; -fx-background-color: #fff;");
 
-            // Dados do Aluno
             Label lblAluno = new Label(sol.getNomeAluno() + " (" + sol.getMatriculaAluno() + ")");
             lblAluno.setFont(Font.font("Verdana", FontWeight.BOLD, 12));
             
@@ -176,7 +165,6 @@ public class DisciplinasEspeciaisController {
             txtJustificativa.setPrefHeight(60);
             txtJustificativa.setStyle("-fx-control-inner-background: #f4f4f4;");
 
-            // Botões de Decisão
             HBox botoes = new HBox(10);
             botoes.setAlignment(Pos.CENTER_RIGHT);
             
@@ -186,7 +174,6 @@ public class DisciplinasEspeciaisController {
             Button btnRecusar = new Button("Recusar");
             btnRecusar.setStyle("-fx-background-color: #dc3545; -fx-text-fill: white;");
 
-            // Ação dos botões
             btnAceitar.setOnAction(e -> {
                 processarDecisao(sol, true);
                 alert.close(); // Fecha janela para forçar refresh

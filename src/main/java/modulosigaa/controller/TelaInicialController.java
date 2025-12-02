@@ -8,11 +8,10 @@ import modulosigaa.utils.Navegacao;
 public class TelaInicialController {
 
     @FXML
-    private AnchorPane rootPane; // Necessário para referência do Menu
+    private AnchorPane rootPane; 
 
     @FXML
     public void handleVisualizarGradeCurricular(ActionEvent event) {
-        // Usa o método que aceita 'Node' porque vem de um Menu
         Navegacao.navegar(rootPane, "/modulosigaa/view/BuscaPorAluno.fxml", "Buscar Aluno");
     }
 

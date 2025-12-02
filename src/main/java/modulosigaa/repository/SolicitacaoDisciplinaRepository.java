@@ -15,7 +15,6 @@ import modulosigaa.model.enums.StatusSolicitacao;
 
 public class SolicitacaoDisciplinaRepository {
 
-    // Cria uma nova solicitação (Usado pelo Aluno)
     public void criar(SolicitacaoDisciplina solicitacao) {
         String sql = "INSERT INTO Solicitacao_Disciplina (statusSolicitacao, justificativa, dataSolicitacao, FK_matriculaAluno, FK_idDisciplina) VALUES (?, ?, ?, ?, ?)";
 
@@ -40,7 +39,6 @@ public class SolicitacaoDisciplinaRepository {
         }
     }
 
-    // Atualiza o status (Usado pelo Orientador para Deferir/Indeferir)
     public void atualizarStatus(int idSolicitacao, StatusSolicitacao novoStatus) {
         String sql = "UPDATE Solicitacao_Disciplina SET statusSolicitacao = ? WHERE idSolicitacao = ?";
         try (Connection conn = DBConnection.getConnection();
@@ -54,11 +52,9 @@ public class SolicitacaoDisciplinaRepository {
         }
     }
 
-    // Busca solicitações pendentes com dados completos para o Orientador
     public List<SolicitacaoDisciplina> listarPendentes() {
         List<SolicitacaoDisciplina> lista = new ArrayList<>();
         
-        // JOIN para trazer o Nome do Aluno, Nome da Disciplina e a ÁREA DE CONHECIMENTO
         String sql = "SELECT s.*, a.nomeAluno, d.nomeDisciplina, d.areaConhecimento " +
                      "FROM Solicitacao_Disciplina s " +
                      "JOIN Aluno a ON s.FK_matriculaAluno = a.matricula " +
@@ -87,10 +83,12 @@ public class SolicitacaoDisciplinaRepository {
         sd.setMatriculaAluno(rs.getInt("FK_matriculaAluno"));
         sd.setIdDisciplina(rs.getInt("FK_idDisciplina"));
         
-        // Dados extras vindos dos JOINs
+        // Dados extras
         sd.setNomeAluno(rs.getString("nomeAluno"));
         sd.setNomeDisciplina(rs.getString("nomeDisciplina"));
-        sd.setAreaConhecimento(rs.getString("areaConhecimento")); // Essencial para o filtro de professores!
+        
+        // ESTA LINHA ESTAVA FALTANDO OU VINDO NULA:
+        sd.setAreaConhecimento(rs.getString("areaConhecimento")); 
         
         return sd;
     }
