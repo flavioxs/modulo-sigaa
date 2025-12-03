@@ -57,7 +57,7 @@ O projeto segue a arquitetura **BCE (Boundary-Control-Entity)**:
 1. Abra seu gerenciador MySQL (Workbench, DBeaver, etc.).
 2. Execute o script na raiz do projeto:
 
-📌 `BD_SistemaAuxilioOrientador.sql`
+ `BD_SistemaAuxilioOrientador.sql`
 
 Esse script irá criar as tabelas e inserir dados de teste.
 
@@ -77,7 +77,7 @@ cd modulo-sigaa
 O sistema usa por padrão `root` / `root`.
 Se sua senha for outra, edite:
 
-📌 `src/main/java/modulosigaa/db/DBConnection.java`
+ `src/main/java/modulosigaa/db/DBConnection.java`
 
 ```java
 public class DBConnection {
