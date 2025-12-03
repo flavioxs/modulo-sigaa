@@ -1,13 +1,13 @@
-# 🎓 Módulo de Apoio ao Orientador Acadêmico - SIGAA (UERN)
+# Módulo de Apoio ao Orientador Acadêmico - SIGAA (UERN)
 
-## 📄 Sobre o Projeto
+## Sobre o Projeto
 
 Este sistema é um módulo desktop desenvolvido em **JavaFX** que visa auxiliar **Orientadores Acadêmicos** no acompanhamento de discentes.  
 Ele atua como uma extensão das funcionalidades do SIGAA, oferecendo uma interface visual para gestão de pendências, grades curriculares e agendamentos.
 
 ---
 
-## 🏗️ Arquitetura
+## Arquitetura
 
 O projeto segue a arquitetura **BCE (Boundary-Control-Entity)**:
 
@@ -18,9 +18,9 @@ O projeto segue a arquitetura **BCE (Boundary-Control-Entity)**:
 
 ---
 
-## ✨ Funcionalidades Principais
+## Funcionalidades Principais
 
-### 🔍 1. Consulta de Alunos e Grade Visual
+### 1. Consulta de Alunos e Grade Visual
 - Busca alunos por nome ou matrícula.
 - **Mapa visual da grade curricular** organizado por semestre.
 - Códigos de cores:
@@ -28,31 +28,31 @@ O projeto segue a arquitetura **BCE (Boundary-Control-Entity)**:
   - 🔵 **Azul:** Matriculado/Cursando
   - 🔴 **Vermelho:** Reprovado/Pendente
 
-### 📋 2. Gestão de Disciplinas Especiais
+### 2. Gestão de Disciplinas Especiais
 - Listagem de solicitações de quebra de pré-requisito.
 - Visualização de justificativa e disponibilidade docente por área.
 - Ações de **Deferir** e **Indeferir**.
 
-### 📅 3. Agenda de Atendimentos
+### 3. Agenda de Atendimentos
 - Painel de agendamentos.
 - Criação de novos atendimentos.
 - Histórico de orientações realizadas.
 
-### ⚠️ 4. Monitoramento de Risco
+### 4. Monitoramento de Risco
 - Identificação automática de alunos em situação de **risco de jubilamento** ou monitoramento.
 
 ---
 
-## 🚀 Como Executar o Projeto
+## Como Executar o Projeto
 
-### ✔️ Pré-requisitos
+### Pré-requisitos
 - **Java JDK 21** ou superior  
 - **Maven** instalado  
 - **MySQL Server** rodando na porta **3306**
 
 ---
 
-### 🔧 Passo 1: Configurar o Banco de Dados
+### Passo 1: Configurar o Banco de Dados
 
 1. Abra seu gerenciador MySQL (Workbench, DBeaver, etc.).
 2. Execute o script na raiz do projeto:
@@ -63,7 +63,7 @@ Esse script irá criar as tabelas e inserir dados de teste.
 
 ---
 
-### 📥 Passo 2: Clonar e Configurar o Projeto
+### Passo 2: Clonar e Configurar o Projeto
 
 ```bash
 git clone https://github.com/seu-usuario/modulo-sigaa.git
@@ -72,7 +72,7 @@ cd modulo-sigaa
 
 ---
 
-### 🔐 Passo 3: Configurar Credenciais (se necessário)
+### Passo 3: Configurar Credenciais (se necessário)
 
 O sistema usa por padrão `root` / `root`.
 Se sua senha for outra, edite:
@@ -89,7 +89,7 @@ public class DBConnection {
 
 ---
 
-### ▶️ Passo 4: Rodar a Aplicação
+### Passo 4: Rodar a Aplicação
 
 No terminal, dentro do diretório do projeto:
 
@@ -99,7 +99,7 @@ mvn clean javafx:run
 
 ---
 
-## 👥 Autores
+## Autores
 
 * **Flávio de Aguiar Xavier Filho**
 * **Eduardo Milhomes Barbosa de Medeiros**
