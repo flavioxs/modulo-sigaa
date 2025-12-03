@@ -1,15 +1,6 @@
 ````markdown
 # 🎓 Módulo de Apoio ao Orientador Acadêmico - SIGAA (UERN)
 
-![Java](https://img.shields.io/badge/java-%23ED8B00.svg?style=for-the-badge&logo=openjdk&logoColor=white)
-![JavaFX](https://img.shields.io/badge/javafx-%23FF0000.svg?style=for-the-badge&logo=java&logoColor=white)
-![MySQL](https://img.shields.io/badge/mysql-%2300f.svg?style=for-the-badge&logo=mysql&logoColor=white)
-![Maven](https://img.shields.io/badge/maven-%23C71A36.svg?style=for-the-badge&logo=apachemaven&logoColor=white)
-
-> Projeto desenvolvido para a disciplina de **Análise e Projeto de Sistemas (2025.1)** - UERN  
-
----
-
 ## 📄 Sobre o Projeto
 
 Este sistema é um módulo desktop desenvolvido em **JavaFX** que visa auxiliar **Orientadores Acadêmicos** no acompanhamento de discentes.  
