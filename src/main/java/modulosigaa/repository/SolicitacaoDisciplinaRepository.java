@@ -83,11 +83,9 @@ public class SolicitacaoDisciplinaRepository {
         sd.setMatriculaAluno(rs.getInt("FK_matriculaAluno"));
         sd.setIdDisciplina(rs.getInt("FK_idDisciplina"));
         
-        // Dados extras
         sd.setNomeAluno(rs.getString("nomeAluno"));
         sd.setNomeDisciplina(rs.getString("nomeDisciplina"));
         
-        // ESTA LINHA ESTAVA FALTANDO OU VINDO NULA:
         sd.setAreaConhecimento(rs.getString("areaConhecimento")); 
         
         return sd;
