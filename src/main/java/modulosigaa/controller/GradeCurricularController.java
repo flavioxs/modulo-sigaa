@@ -63,28 +63,25 @@ public class GradeCurricularController {
         for (SituacaoDisciplina sd : historico) {
             if (sd.getDisciplinaDetalhada() != null) {
                 int p = sd.getDisciplinaDetalhada().getPeriodo();
-                // Ajusta o índice (Período 1 vai no índice 0)
                 if (p >= 1 && p <= maxPeriodos) {
                     periodos.get(p - 1).add(sd);
                 }
             }
         }
 
-        // 3. Renderiza cada período na tela
         for (int i = 0; i < maxPeriodos; i++) {
             List<SituacaoDisciplina> disciplinasDoPeriodo = periodos.get(i);
             
             
             if (disciplinasDoPeriodo.isEmpty()) continue; 
 
-        
             Label lblPeriodo = new Label((i + 1) + "º Período");
             lblPeriodo.setFont(Font.font("Verdana", FontWeight.BOLD, 14));
             lblPeriodo.setStyle("-fx-text-fill: #3f5ad8; -fx-padding: 0 0 5 0;");
             gradeVBox.getChildren().add(lblPeriodo);
 
     
-            HBox linhaSemestre = new HBox(15); // Espaço horizontal entre matérias
+            HBox linhaSemestre = new HBox(15);
             linhaSemestre.setPrefWidth(Double.MAX_VALUE);
             linhaSemestre.setPadding(new Insets(5));
             
@@ -92,7 +89,6 @@ public class GradeCurricularController {
                 linhaSemestre.getChildren().add(criarCaixinhaDisciplina(sd));
             }
             
-          
             ScrollPane scrollLinha = new ScrollPane(linhaSemestre);
             scrollLinha.setFitToHeight(true);
             scrollLinha.setVbarPolicy(ScrollPane.ScrollBarPolicy.NEVER); 
@@ -104,36 +100,35 @@ public class GradeCurricularController {
     }
 
     private VBox criarCaixinhaDisciplina(SituacaoDisciplina sd) {
-        // Cria o "Card" da disciplina (quadradinho)
+
         VBox box = new VBox(5);
         box.setPadding(new Insets(10));
-        box.setPrefWidth(150);  // Largura fixa para ficarem uniformes
-        box.setPrefHeight(110); // Altura fixa
+        box.setPrefWidth(150);  
+        box.setPrefHeight(110); 
         box.setAlignment(Pos.CENTER);
         
-        // Define as cores com base no Status
-        String corFundo = "#f5f5f5"; // Cinza claro (Padrão/Pendente)
+        String corFundo = "#f5f5f5"; 
         String corBorda = "#cccccc";
         String corTexto = "#333333";
         
         if (sd.getStatusDisciplina() != null) {
             switch (sd.getStatusDisciplina()) {
-                case CUMPRIDA: // Aprovado -> Verde
+                case CUMPRIDA: 
                     corFundo = "#d4edda"; 
                     corBorda = "#c3e6cb";
                     corTexto = "#155724";
                     break;
-                case MATRICULADO: // Cursando -> Azul
+                case MATRICULADO: 
                     corFundo = "#cce5ff";
                     corBorda = "#b8daff";
                     corTexto = "#004085";
                     break;
-                case PENDENTE: // Reprovado -> Vermelho (ou Rosa claro)
+                case PENDENTE: 
                     corFundo = "#f8d7da";
                     corBorda = "#f5c6cb";
                     corTexto = "#721c24";
                     break;
-                case APROVEITADA: // Aproveitado -> Amarelo/Laranja claro
+                case APROVEITADA:
                     corFundo = "#fff3cd";
                     corBorda = "#ffeeba";
                     corTexto = "#856404";
@@ -142,15 +137,14 @@ public class GradeCurricularController {
             }
         }
 
-        // Aplica o estilo CSS inline
+       
         box.setStyle("-fx-background-color: " + corFundo + "; " +
                      "-fx-border-color: " + corBorda + "; " +
                      "-fx-border-radius: 8; -fx-background-radius: 8; " +
                      "-fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 3, 0, 0, 1);");
 
-        // --- CONTEÚDO DO CARD ---
         
-        // Nome da Disciplina
+        
         String nome = sd.getDisciplinaDetalhada() != null ? sd.getDisciplinaDetalhada().getNome() : "Desconhecida";
         Label lblNome = new Label(nome);
         lblNome.setWrapText(true);
@@ -158,16 +152,13 @@ public class GradeCurricularController {
         lblNome.setTextAlignment(javafx.scene.text.TextAlignment.CENTER);
         lblNome.setFont(Font.font("Verdana", FontWeight.BOLD, 11));
         lblNome.setStyle("-fx-text-fill: " + corTexto + ";");
-        // Faz o nome crescer para ocupar o espaço disponível verticalmente
         VBox.setVgrow(lblNome, Priority.ALWAYS);
 
-        // Carga Horária
         int ch = sd.getDisciplinaDetalhada() != null ? sd.getDisciplinaDetalhada().getCargaHoraria() : 0;
         Label lblCarga = new Label("CH: " + ch + "h");
         lblCarga.setFont(Font.font("Verdana", 9));
         lblCarga.setStyle("-fx-text-fill: " + corTexto + ";");
 
-        // Nota (Só mostra se for maior que 0)
         Label lblNota = new Label(sd.getNota() > 0 ? String.format("Nota: %.1f", sd.getNota()) : "");
         lblNota.setFont(Font.font("Verdana", FontWeight.BOLD, 10));
         lblNota.setStyle("-fx-text-fill: " + corTexto + ";");
@@ -176,27 +167,22 @@ public class GradeCurricularController {
         return box;
     }
 
-    // --- AÇÕES DE NAVEGAÇÃO ---
 
     @FXML
     public void handleVoltar(ActionEvent event) {
-        // Método antigo, mantido por compatibilidade
         Navegacao.navegar(event, "/modulosigaa/view/BuscaPorAluno.fxml", "Consultar Alunos");
     }
 
     @FXML
     public void handleVoltar2(ActionEvent event) {
-        // Botão "Voltar" principal da tela nova
         Navegacao.navegar(event, "/modulosigaa/view/BuscaPorAluno.fxml", "Consultar Alunos");
     }
     
     @FXML
     public void handleImprimir() {
         System.out.println("Enviando grade para impressão...");
-        // Aqui você implementaria a lógica de gerar PDF se necessário
     }
     
-    // --- STUBS PARA O MENU (Evita erros se clicar no menu superior) ---
     @FXML public void handleVisualizarGradeCurricular() {}
     @FXML public void handleDisciplinasEspeciais() {}
     @FXML public void handleListarPendenciasCriticas() {}

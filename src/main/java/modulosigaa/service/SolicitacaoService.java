@@ -3,7 +3,7 @@ package modulosigaa.service;
 import java.time.LocalDate;
 import java.util.List;
 
-import modulosigaa.repository.SolicitacaoDisciplinaRepository; // Importação Atualizada
+import modulosigaa.repository.SolicitacaoDisciplinaRepository; 
 import modulosigaa.model.entity.Aluno;
 import modulosigaa.model.entity.Disciplina;
 import modulosigaa.model.entity.SolicitacaoDisciplina;
@@ -11,10 +11,10 @@ import modulosigaa.model.enums.StatusSolicitacao;
 
 public class SolicitacaoService {
 
-    private final SolicitacaoDisciplinaRepository repository; // Nome da variável atualizado
+    private final SolicitacaoDisciplinaRepository repository; 
 
     public SolicitacaoService() {
-        this.repository = new SolicitacaoDisciplinaRepository(); // Instância correta
+        this.repository = new SolicitacaoDisciplinaRepository(); 
     }
 
     public void solicitarDisciplina(Aluno aluno, Disciplina disciplina, String justificativa) {

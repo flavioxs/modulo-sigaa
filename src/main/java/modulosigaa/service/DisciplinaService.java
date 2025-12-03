@@ -1,16 +1,16 @@
 package modulosigaa.service;
 
-import modulosigaa.repository.DisciplinaRepository; // Importação correta
+import modulosigaa.repository.DisciplinaRepository;
 import modulosigaa.model.entity.Disciplina;
 
 import java.util.List;
 
 public class DisciplinaService {
 
-    private final DisciplinaRepository disciplinaRepository; // Nome da variável atualizado
+    private final DisciplinaRepository disciplinaRepository; 
 
     public DisciplinaService() {
-        this.disciplinaRepository = new DisciplinaRepository(); // Instância correta
+        this.disciplinaRepository = new DisciplinaRepository(); 
     }
 
     public List<Disciplina> listarDisciplinasPorGrade(int idGrade) {

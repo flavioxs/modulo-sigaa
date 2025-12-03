@@ -80,11 +80,9 @@ public class AlunosSolicitantesController {
     }
 
     @FXML public void handleFinalizarAnalise(ActionEvent event) {
-        // Redireciona para tela de sucesso ou volta para início
         Navegacao.navegar(event, "/modulosigaa/view/Sucesso.fxml", "Sucesso");
     }
 
-    // Menus
     @FXML public void handleVisualizarGradeCurricular(ActionEvent event) { Navegacao.navegar(solicitantesVBox, "/modulosigaa/view/BuscaPorAluno.fxml", "Grade"); }
     @FXML public void handleDisciplinasEspeciais(ActionEvent event) { Navegacao.navegar(solicitantesVBox, "/modulosigaa/view/DisciplinasEspeciais.fxml", "Disciplinas"); }
     @FXML public void handleListarPendenciasCriticas(ActionEvent event) { Navegacao.navegar(solicitantesVBox, "/modulosigaa/view/ListaAlunosPendenciasCriticas.fxml", "Pendências"); }

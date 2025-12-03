@@ -13,21 +13,16 @@ public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) {
-        // 1. Teste de Conexão com o Banco (Opcional, mas recomendado na inicialização)
         verificarBancoDeDados();
 
         try {
-            // 2. Carregamento do FXML
-            // O caminho deve iniciar com '/' e refletir a estrutura em resources
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/modulosigaa/view/TelaInicial.fxml"));
             Parent root = loader.load();
 
-            // 3. Configuração da Cena e Palco
             Scene scene = new Scene(root);
             primaryStage.setTitle("UERN - SIGAA - Módulo Orientador Acadêmico");
             primaryStage.setScene(scene);
             
-            // Impede que a janela fique muito pequena
             primaryStage.setMinWidth(800);
             primaryStage.setMinHeight(600);
             

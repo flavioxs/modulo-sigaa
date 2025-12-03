@@ -31,10 +31,8 @@ public class Navegacao {
         }
     }
 
-    // Lógica interna para carregar o FXML
     private static void carregarTela(Stage stage, String fxmlPath, String titulo) {
         try {
-            // O caminho deve ser relativo ao classpath (ex: /modulosigaa/view/Tela.fxml)
             FXMLLoader loader = new FXMLLoader(Navegacao.class.getResource(fxmlPath));
             Parent root = loader.load();
 

@@ -176,7 +176,7 @@ public class DisciplinasEspeciaisController {
 
             btnAceitar.setOnAction(e -> {
                 processarDecisao(sol, true);
-                alert.close(); // Fecha janela para forçar refresh
+                alert.close();
             });
             
             btnRecusar.setOnAction(e -> {
@@ -196,7 +196,6 @@ public class DisciplinasEspeciaisController {
         alert.getDialogPane().setContent(scroll);
         alert.showAndWait();
         
-        // Ao fechar a janela, recarrega a tela principal para atualizar contadores
         carregarSolicitacoesAgrupadas();
     }
 
@@ -211,14 +210,6 @@ public class DisciplinasEspeciaisController {
             e.printStackTrace();
         }
     }
-
-    /*private void mostrarAlerta(String titulo, String msg) {
-        Alert alert = new Alert(Alert.AlertType.INFORMATION);
-        alert.setTitle(titulo);
-        alert.setHeaderText(null);
-        alert.setContentText(msg);
-        alert.showAndWait();
-    }*/
 
     @FXML
     public void handleVoltar(ActionEvent event) {
