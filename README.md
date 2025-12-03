@@ -1,4 +1,3 @@
-````markdown
 # 🎓 Módulo de Apoio ao Orientador Acadêmico - SIGAA (UERN)
 
 ## 📄 Sobre o Projeto
@@ -102,8 +101,8 @@ mvn clean javafx:run
 
 ## 👥 Autores
 
-* **Eduardo Milhomes Barbosa de Medeiros**
 * **Flávio de Aguiar Xavier Filho**
+* **Eduardo Milhomes Barbosa de Medeiros**
 * **Juliana Assis de Arimateia Silva**
 * **Lucas Bezerra de Lima**
 * **Mateus Gomes Neri**
